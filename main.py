@@ -1,11 +1,19 @@
+import argparse
+
 from src.analysis import analyze_dna
 from src.sequence_tools import reverse_complement, transcribe_dna_to_rna
 from src.fasta_reader import read_fasta
 from src.protein_translation import translate_rna_orf
 from src.visualization import plot_gc_content
 
+
 def main():
-    sequences = read_fasta("data/sample.fasta")
+    parser = argparse.ArgumentParser(description="DNA Analysis Toolkit")
+    parser.add_argument("--file", required=True, help="FASTA file path")
+
+    args = parser.parse_args()
+
+    sequences = read_fasta(args.file)
 
     print("\n=== BIOINFORMATICS PIPELINE ===")
 
@@ -35,12 +43,10 @@ def main():
         output_lines.append(f"Reverse Complement: {rev}")
         output_lines.append("")
 
-    
     with open("results.txt", "w") as f:
         for line in output_lines:
             f.write(line + "\n")
 
-    
     plot_gc_content(sequences)
 
 
