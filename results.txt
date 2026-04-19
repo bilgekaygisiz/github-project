@@ -1,0 +1,24 @@
+Sequence: seq1
+DNA: ATGCGTAA
+Length: 8
+GC Content: 37.5%
+RNA: AUGCGUAA
+Protein: M?
+Reverse Complement: TTACGCAT
+
+Sequence: seq2
+DNA: GGGCCCATA
+Length: 9
+GC Content: 66.67%
+RNA: GGGCCCAUA
+Protein: 
+Reverse Complement: TATGGGCCC
+
+Sequence: seq3
+DNA: ATATATCGCG
+Length: 10
+GC Content: 40.0%
+RNA: AUAUAUCGCG
+Protein: 
+Reverse Complement: CGCGATATAT
+

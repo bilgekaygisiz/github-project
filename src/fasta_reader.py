@@ -6,10 +6,15 @@ def read_fasta(file_path):
         for line in file:
             line = line.strip()
 
+            # boş satırları atla
+            if not line:
+                continue
+
             if line.startswith(">"):
                 current_id = line[1:]
                 sequences[current_id] = ""
             else:
-                sequences[current_id] += line
+                if current_id:
+                    sequences[current_id] += line.upper()
 
     return sequences
