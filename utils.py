@@ -20,11 +20,6 @@ def analyze_dna(sequence):
 
 
 def reverse_complement(sequence):
-    complement = {
-        "A": "T",
-        "T": "A",
-        "G": "C",
-        "C": "G"
-    }
+    mapping = {"A": "T", "T": "A", "G": "C", "C": "G"}
 
-    return "".join(complement.get(base, base) for base in reversed(sequence.upper()))
+    return "".join(mapping.get(base, base) for base in reversed(sequence.upper()))

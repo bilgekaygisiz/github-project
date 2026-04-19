@@ -1,22 +1,15 @@
-# DNA Sequence Analysis Tool
+# DNA Analysis Tool
 
-## Overview
-This project is a simple bioinformatics tool for analyzing DNA sequences using Python.
+## Description
+Simple bioinformatics tool for DNA sequence analysis.
 
 ## Features
 - Nucleotide counting
 - GC content calculation
 - Reverse complement generation
 
-## Usage
-Run:
-
+## How to run
 python main.py
 
-Then enter a DNA sequence.
-
-## Technologies
-- Python
-
-## Author
-Bilge Kaygisiz
+## Input
+DNA sequence (A, T, G, C)
