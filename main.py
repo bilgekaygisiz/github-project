@@ -1,20 +1,24 @@
-from utils import analyze_dna, reverse_complement
+from src.analysis import analyze_dna
+from src.sequence_tools import reverse_complement
+from src.fasta_reader import read_fasta
 
 def main():
-    dna = input("DNA sequence gir: ")
+    sequences = read_fasta("data/sample.fasta")
 
-    result = analyze_dna(dna)
-    rev = reverse_complement(dna)
+    print("\n=== DNA ANALYSIS REPORT ===")
 
-    print("\nRESULT")
-    print("------")
-    print("Length:", result["length"])
-    print("A:", result["A"])
-    print("T:", result["T"])
-    print("G:", result["G"])
-    print("C:", result["C"])
-    print("GC%:", result["GC"])
-    print("Reverse complement:", rev)
+    for name, dna in sequences.items():
+        result = analyze_dna(dna)
+        rev = reverse_complement(dna)
+
+        print(f"\nSequence: {name}")
+        print(f"Length: {result['length']}")
+        print(f"A: {result['A']}")
+        print(f"T: {result['T']}")
+        print(f"G: {result['G']}")
+        print(f"C: {result['C']}")
+        print(f"GC Content: {result['GC']}%")
+        print(f"Reverse Complement: {rev}")
 
 
 if __name__ == "__main__":
